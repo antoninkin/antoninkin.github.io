@@ -1,13 +1,14 @@
-title: Facets
-subtitle: A Jekyll theme for Wax sites
+title: Democratising AI
+subtitle: In the Brave New World
 author:
-  name: Wax user
-  email: your-email@domain.com
+  name: Anton Inkin
+  email: anton.inkin@domain.com
 description:
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-baseurl: "/wax-facets"
+#baseurl: "/demo-ai"
+url: "https://antoninkin.github.io"
 
 # --------------------------------------------------------------
 # COLLECTION SETTINGS
@@ -17,6 +18,15 @@ baseurl: "/wax-facets"
 # Jekyll while others are Wax-specific.
 # For more info, refer to:
 # ~> https://jekyllrb.com/docs/collections/
+
+wax:
+  facets:
+    source: _data/facets.yml
+
+collections:
+  posts:  # your collection name without the underscore
+    output: true  # this generates a page for each document
+    permalink: /posts/:name  # customize URL structure
 
 collections:
   exhibits:

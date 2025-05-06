@@ -6,20 +6,38 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 #
 layout: home
+title: "Democratising AI"
 ---
 
-### Facet <span style="color:#440027;font-size:small"><em>noun</em></span>
+#### Democratising AI <span style="color:#440027;font-size:small"></span>
+Artificial Intelligence is rapidly transforming our lives—from the way students learn and parents make decisions, to how educators teach and adapt. But access to clear, trustworthy, and inclusive information about AI hasn't kept pace with its influence.
 
-**fac·et** | \ ˈfa-sət
+This site exists to help close that gap.
 
-1. any of the definable aspects that make up a subject or an object. Ex. _Each facet of the problem requires careful attention_.
-2. a small plane surface.
-3. the external corneal surface of an ommatidium. (_[Merriam-Webster](https://www.merriam-webster.com/dictionary/facet)_)
+#### Why This Matters
 
+AI is shaping decision-making in education, healthcare, social media, and beyond. While it promises great benefits, it also brings risks like bias, privacy concerns, and misinformation. These issues aren’t just technical—they’re social and human.
+
+If we want AI to serve people fairly, we need to democratise understanding of how it works and how it affects us.
+
+##### We created this platform for:
+- **Educators**, integrating AI into teaching and curriculum
+- **Parents**, navigating AI tools in family life
+- **Students**, growing up surrounded by intelligent systems
+
+Whether you're guiding others or just getting started, our goal is to make AI more transparent and approachable.
 ---
+##### What You’ll Find Here
 
-Welcome! _Facets_ is the second Jekyll theme for [Wax sites](https://minicomp.github.io/wax/). _Facets_ allows users to browse through a collection using facets, or filters. When we are browsing through a collection of cultural artifacts, we often want to reduce the number of objects in front of us to a small collection that fits a very specific criteria. Faceted browsing is a form of browsing that allows you to do just that using filters you select. In Facets this can be achieved using drop-down menus where you can select the categories you want to browse by.
+This site offers a growing collection of articles, tools and widgets that explore:
 
-This template is open source. To use it for your small collection and exhibit simply replace our content with yours. To learn more visit our ["About"]({{site.baseurl}}/about/) page and our ["How to"]({{site.baseurl}}/learning/) page. If you know what you're doing, and you're ready to jump right in, then go ahead and...
+- Key **technologies** like chatbots, language models, and recommender systems
+- Critical **issues** like bias, academic integrity, and data privacy
+- Specific **user perspectives**, from students and teachers to families
 
-<div class="text-center"><a class="action-button btn" href="https://github.com/minicomp/wax-facets/" target="_blank" role="button">get me on Github</a></div>
+You can filter and explore content based on what's most relevant to you.
+---
+👉 **[Browse Articles]({{site.baseurl}}/collection/)**
+👉 **[Search Topics]({{site.baseurl}}/search/)**
+👉 **[About]({{site.baseurl}}/about/)**
+👉 **[How to]({{site.baseurl}}/learning/)**
