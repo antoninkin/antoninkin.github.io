@@ -61,14 +61,9 @@ title: "Democratising AI"
     <div class="col-md-6">
       <h3>Browse All Content</h3>
       <p>Not sure which category fits you? Browse all our articles, tools, and resources.</p>
-      <a href="/posts/" class="btn btn-outline-primary">Browse All Posts</a>
+      <a href="/posts/" class="btn btn-outline-primary">Browse All News</a>
       <a href="/search/" class="btn btn-outline-secondary ml-2">Search Content</a>
     </div>
+
   </div>
 </div>
-
-This site offers a growing collection of articles, tools and widgets that explore:
-
-- Key **technologies** like chatbots, language models, and recommender systems
-- Critical **issues** like bias, academic integrity, and data privacy
-- Specific **user perspectives**, from students and teachers to families
