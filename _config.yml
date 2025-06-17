@@ -1,87 +1,74 @@
 title: Democratising AI
+logo: "/assets/logo/logo.svg"
 subtitle: In the Brave New World
 author:
-  name: Anton Inkin
-  email: anton.inkin@domain.com
-description:
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-#baseurl: "/demo-ai"
-url: "https://antoninkin.github.io"
-
-# --------------------------------------------------------------
-# COLLECTION SETTINGS
-# --------------------------------------------------------------
-# Wax leverages Jekyll collections for much of its
-# functionality, therefor some of the keys below are from
-# Jekyll while others are Wax-specific.
-# For more info, refer to:
-# ~> https://jekyllrb.com/docs/collections/
+  name:
+  email:
+description: "About AI, technology, and society."
+baseurl: ""
+url: ""
 
 wax:
   facets:
     source: _data/facets.yml
 
-collections:
-  posts:  # your collection name without the underscore
-    output: true  # this generates a page for each document
-    permalink: /posts/:name  # customize URL structure
+sass:
+  sass_dir: _sass
+  style: compressed
 
 collections:
-  exhibits:
+  posts:
     output: true
-  qatar: # name of collection
-    output: true # makes sure pages are output as html files
-    layout: "qatar_item" # the layout for the pages to use
-    metadata:
-      source: "qatar.csv" # path to the metadata file within `_data`
-    images:
-      source: "raw_images/qatar" # path to the directory of images within `_data`
+    permalink: /posts/:title/
 
-# --------------------------------------------------------------
 # SEARCH INDEX SETTINGS
-# --------------------------------------------------------------
-# You can create multiple search indexes below (though only one is
-# recommended!) by specifying
+# You can create multiple search indexes below (though only one is recommended!) by specifying
 # an `index` file to write it to and some `collections` for it to index
 # and running `$ bundle exec rake wax:search` .
 
 search:
   main:
-    index: "/search/index.json" # file the index will get written to
+    index: "/search/index.json"
     collections:
-      qatar:
-        content: true # whether or not to index page content
-        fields: # the metadata fields to index
-          - artist
-          - location
-          - label
-          - _date
-          - object_type
-          - current_location
-
-# --------------------------------------------------------------
-# SITE MENU SETTINGS
-# --------------------------------------------------------------
-# Each menu item needs a `label` (whats shown), and a `link`
-# (where it goes). An item can optionally have a dropdown
-# submenu via `sub`.
+      posts:
+        content: true
+        fields:
+          - title
+          - year
+          - issues
+          - technology
+          - user_group
 
 menu:
-  - label: "Exhibits"
+  - label: "Home"
+    link: "/"
+  - label: "News"
+    link: "/posts/"
+  - label: "Research"
     sub:
-      - label: "Parallax Images"
-        link: "/exhibits/parallax/"
-      - label: "Image References"
-        link: "/exhibits/references/"
-      - label: "Subset Collection"
-        link: "/exhibits/subset/"
-  - label: "Browse"
-    link: "/collection/"
+      - label: "Research Team"
+        link: "/research_team/"
+      - label: "Papers"
+        link: "/papers/"
+      - label: "Project 1"
+        link: "/project1/"
+      - label: "Project 2"
+        link: "/project2/"
+  - label: "Learn and Toolkit"
+    sub:
+      - label: "All Resources"
+        link: "/all_resources/"
+      - label: "Widgets"
+        link: "/widgets/"
   - label: "Search"
     link: "/search/"
-  - label: "How To"
-    link: "/learning/"
   - label: "About"
     link: "/about/"
+
+# _config.yml production settings
+safe: true
+lsi: false
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge

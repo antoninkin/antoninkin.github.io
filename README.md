@@ -1,44 +1,104 @@
-# Facets
+# Democratising AI
 
-*Facets* is a theme for [Wax sites](https://minicomp.github.io\/wax/) that allows users to browse through a collection using facets, or filters. When we are browsing through a collection of cultural artifacts, we often want to reduce the number of objects in front of us to a small collection that fits a very specific criteria. Faceted browsing is a form of browsing that allows you to do just that using filters you select. In Facets this can be achieved using drop-down menus where you can select the categories you want to browse by.
+A Jekyll-based blog and resource platform exploring AI, technology, and society with a focus on making AI accessible and understandable for educators, parents, and students.
 
-Visit [the demo site](https://minicomp.github.io/wax-facets/) to see *Facets* in action
+## About
 
-## How to use Wax
+This site explores the intersection of AI and education, providing resources and insights for:
 
-Facets is a [Wax](https://minicomp.github.io/wax/) theme. Wax in turn relies on Jekyll. To use Facets you need to be familiar with both Jekyll and Wax. To learn more about setting up and using Wax visit [the Wax wiki](https://minicomp.github.io/wiki/wax/). You can learn more about using Jekyll on the [Jekyll docs](https://jekyllrb.com/docs/), or in [this great tutorial](https://programminghistorian.org/en/lessons/building-static-sites-with-jekyll-github-pages) by Amanda Visconti at Programming Historian.
+- **Educators** integrating AI into teaching and curriculum
+- **Parents** navigating AI tools in family life
+- **Students** growing up surrounded by intelligent systems
 
-## How to define facets
+## Features
 
-As other Wax sites, *Facets* depends on the metadata you create. Let's assume you are using a CSV to record data for your collection. In order for *Facets* to work, that CSV must have designated columns for each large category you want to "facet" by. These become the *facet headers* at the top of the drop-down menus above the gallery. Each of these columns then accepts a small range of sub-categories, or *facet values*. These become the check boxes.
+- **Faceted Browsing**: Filter articles by user groups, technologies, and issues
+- **Search Functionality**: Full-text search across all content
+- **Interactive Galleries**: Browse content with advanced filtering options
 
-<br>
-<img src="https://minicomp.github.io/wax-facets/assets/figures/fig1.png" height="100%" width="100%" alt="Figure 1. Illustration of Facet Headers and Facet Values"/>
-<br>
-<br>
+## Technology Stack
 
-We tell *Facets* what collection gallery to insert and what columns to facet by with a Jekyll `include` command that brings in the `collection_gallery` at the desired place on the page. This `include` snippet requires a `collection` variable, but can  take three other optional variables to help you refine the results further: `only`, `facet_by`, and `num_column`. This theme already comes with the following example in the [Browse](/collection/) page. In order to use it, just replace the sample values with your own when editing the page:
+- **Jekyll**: Static site generator
+- **Wax-Facets**: Custom theme for faceted browsing
+- **Bootstrap 4**: Responsive CSS framework
+- **GitHub Pages**: Hosting platform
 
-<code>{% raw %}
-  {% include collection_gallery.html collection='qatar'
-      facet_by='object_type|location' num_column=4 %}
-{% endraw %}</code>
+## Content Structure
 
-For the `facet_by` variable, specify one or more field names in a pipe-separated list. 
+The site organizes content around three main facets:
 
-For the `num_column` variable, specify a number that is a divisor of 12 (i.e, 1, 2, 3, 4, or 6). This is the number of columns you want to have. The default is 2 columns.
+#### User Groups
 
-## How to create a subset gallery  
+- Educators
+- Parents
+- Students
 
-If you pass the `only` variable to the include instruction, the collection will be filtered to only items that have [a truthy value](https://shopify.github.io/liquid/filters/where/) for that field name. Consider the example we use in 'Exhibit with Subset Collection':
+#### Technologies
 
-<code>{% raw %}{% include collection_gallery.html collection='qatar' facet_by='object_type' only='portrait' num_column=4 %}{% endraw %}</code>
+#### Issues
 
-The gallery that results from this instruction, which you can see in our "[Exhibit with Subset Collection](/exhibits/subset/)," only shows portraits. Notice also that this gallery view does not have a faceting menu.
+## Adding Content
 
-## How to change our design
+### Blog Posts
 
-*Facets* is a prototype, just as *Wax* itself is a prototype, a tool to think with that is also immediately practical. Both of these are built on Jekyll, which allows you an enormous amount of flexibility for changing the design of your site. Feel free to play around with the code that makes our exhibit pages and our galleries tick. The more you transform our work, the more we will feel like we succeeded.
+Create new posts in the `_posts/` directory following the naming convention:
 
-The CSS that determines the look of the site is done using a combination of SASS and the bootstrap framework. To change some common variables, like colors or fonts, you can edit the `/assets/css/style.scss` file. You can always override our own choices from this file as well. You can also add your own CSS files to the `_sass` folder, and simply import them into the main sass file above.
+```
+YYYY-MM-DD-title.md
+```
 
+Each post should include frontmatter with facet classifications:
+
+```yaml
+---
+title: "Your Post Title"
+author: "Author Name"
+year: 2025
+layout: post
+issues:
+  - issue1
+  - issue2
+technology:
+  - technology1
+  - technology2
+user_group:
+  - educators
+  - parents
+  - students
+---
+Your content here...
+```
+
+### Pages
+
+Add new pages to the `_pages/` directory and update the navigation menu in `_config.yml`.
+
+## Configuration
+
+Key configuration files:
+
+- `_config.yml`: Site settings and navigation
+- `_data/facets.yml`: Facet definitions for browsing
+- `_data/wax.yml`: Search configuration
+
+## Deployment
+
+The site is automatically deployed via GitHub Pages when changes are pushed to the main branch.
+
+**Live Site**: [https://uts-cic.github.io](https://uts-cic.github.io)
+
+## License
+
+This project is open source. See LICENSE.txt for details.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit issues or pull requests.
+
+## Contact
+
+For questions or collaboration opportunities, please reach out through the About page or GitHub issues.
+
+---
+
+_Built with Jekyll and Wax-Facets theme_

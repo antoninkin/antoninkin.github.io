@@ -3,11 +3,11 @@
 {% assign config = site.search[key] %}
 {% assign index = config.index | absolute_url %}
 {%- capture fields -%}
-  {%- for collection in config.collections -%}
-    {%- for field in collection[1].fields -%}
-      {{ field }}{% unless forloop.last %}|||{% endunless %}
-    {%- endfor -%}
-  {%- endfor -%}
+{%- for collection in config.collections -%}
+{%- for field in collection[1].fields -%}
+{{ field }}{% unless forloop.last %}|||{% endunless %}
+{%- endfor -%}
+{%- endfor -%}
 {%- endcapture -%}
 {% assign fields = fields | split: '|||' | uniq %}
 
@@ -21,11 +21,10 @@
 <script type='text/javascript' src="{{ '/assets/js/elasticlunr.min.js' | absolute_url }}"></script>
 <script type='text/javascript' src="{{ '/assets/js/search-ui.js' | absolute_url }}"></script>
 <script type='text/javascript'>
-  var fields    = {{ fields | jsonify }};
+  var fields = {{ fields | jsonify }};
   var indexFile = "{{ index }}";
-  var url       = "{{ '/' | absolute_url }}";
-  console.log(url);
-  $(document).ready(function() {
+  var url = "{{ '/' | absolute_url }}";
+  $(document).ready(function () {
     startSearchUI(fields, indexFile, url);
   });
 </script>

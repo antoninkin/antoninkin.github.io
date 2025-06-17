@@ -1,43 +1,74 @@
 ---
-#
-# By default, content added below the "---" mark will appear in the home page
-# between the top bar and the list of recent posts.
-# To change the home page layout, edit the _layouts/home.html file.
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-#
 layout: home
 title: "Democratising AI"
 ---
 
-#### Democratising AI <span style="color:#440027;font-size:small"></span>
-Artificial Intelligence is rapidly transforming our lives—from the way students learn and parents make decisions, to how educators teach and adapt. But access to clear, trustworthy, and inclusive information about AI hasn't kept pace with its influence.
+<div class="hero-section text-center mb-5">
+  <h1>Democratising AI</h1>
+  <p class="lead">Explore AI content tailored to your role and interests</p>
+</div>
 
-This site exists to help close that gap.
+<div class="user-groups-section">
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card user-group-card h-100" data-group="educators">
+        <div class="card-body text-center">
+          <div class="user-icon mb-3">
+            <i class="fas fa-chalkboard-teacher fa-3x text-primary"></i>
+          </div>
+          <h3 class="card-title">Educators</h3>
+          <p class="card-text">Discover AI tools, teaching strategies, and classroom integration guides designed for teachers and academic professionals.</p>
+          <a href="/posts/?usergroup=educators" class="btn btn-primary">Explore for Educators</a>
+        </div>
+      </div>
+    </div>
 
-#### Why This Matters
+    <div class="col-md-4 mb-4">
+      <div class="card user-group-card h-100" data-group="parents">
+        <div class="card-body text-center">
+          <div class="user-icon mb-3">
+            <i class="fas fa-users fa-3x text-success"></i>
+          </div>
+          <h3 class="card-title">Parents</h3>
+          <p class="card-text">Find resources about AI's impact on children's education, privacy concerns, and family-friendly AI tools.</p>
+          <a href="/posts/?usergroup=parents" class="btn btn-success">Explore for Parents</a>
+        </div>
+      </div>
+    </div>
 
-AI is shaping decision-making in education, healthcare, social media, and beyond. While it promises great benefits, it also brings risks like bias, privacy concerns, and misinformation. These issues aren’t just technical—they’re social and human.
+    <div class="col-md-4 mb-4">
+      <div class="card user-group-card h-100" data-group="students">
+        <div class="card-body text-center">
+          <div class="user-icon mb-3">
+            <i class="fas fa-graduation-cap fa-3x text-info"></i>
+          </div>
+          <h3 class="card-title">Students</h3>
+          <p class="card-text">Learn about AI literacy, digital tools for learning, and how AI technology affects your educational journey.</p>
+          <a href="/posts/?usergroup=students" class="btn btn-info">Explore for Students</a>
+        </div>
+      </div>
+    </div>
 
-If we want AI to serve people fairly, we need to democratise understanding of how it works and how it affects us.
+  </div>
+</div>
 
-##### We created this platform for:
-- **Educators**, integrating AI into teaching and curriculum
-- **Parents**, navigating AI tools in family life
-- **Students**, growing up surrounded by intelligent systems
-
-Whether you're guiding others or just getting started, our goal is to make AI more transparent and approachable.
----
-##### What You’ll Find Here
+<div class="general-content mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Why This Matters</h3>
+      <p>AI is shaping decision-making in education, healthcare, social media, and beyond. While it promises great benefits, it also brings risks like bias, privacy concerns, and misinformation.</p>
+    </div>
+    <div class="col-md-6">
+      <h3>Browse All Content</h3>
+      <p>Not sure which category fits you? Browse all our articles, tools, and resources.</p>
+      <a href="/posts/" class="btn btn-outline-primary">Browse All Posts</a>
+      <a href="/search/" class="btn btn-outline-secondary ml-2">Search Content</a>
+    </div>
+  </div>
+</div>
 
 This site offers a growing collection of articles, tools and widgets that explore:
 
 - Key **technologies** like chatbots, language models, and recommender systems
 - Critical **issues** like bias, academic integrity, and data privacy
 - Specific **user perspectives**, from students and teachers to families
-
-You can filter and explore content based on what's most relevant to you.
----
-👉 **[Browse Articles]({{site.baseurl}}/collection/)**
-👉 **[Search Topics]({{site.baseurl}}/search/)**
-👉 **[About]({{site.baseurl}}/about/)**
-👉 **[How to]({{site.baseurl}}/learning/)**

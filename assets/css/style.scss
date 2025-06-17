@@ -35,20 +35,20 @@ sitemap: false
 $body-font: "Open Sans Regular", "Verdana", "sans-serif";
 $heading-font: "Open Sans Light", "Verdana", "sans-serif";
 
-/* Colors: Dark Blue Jade Theme */
+/* Colors: Light Theme – Black, Grey, White */
 
-$dark-background: #003b3b;         // Dark blue jade
-$medium-background: #005f5f;       // Medium tone of jade
-$light-background: #e0f7f7;        // Light jade-tinted background
+$light-background: #ffffff;         // Main white background
+$medium-background: #f2f2f2;        // Light grey for sections/cards
+$dark-background: #a7a7a7;          // Slightly darker grey for contrast areas
 
-$light-text: #ccf5f5;              // Soft jade-tinted text
-$dark-text: #e8fafa;               // Almost white text for dark bg
-$muted-text: #a0cccc;              // Muted jade-gray text
+$dark-text: #111111;                // Nearly black text for high readability
+$muted-text: #555555;               // Medium grey text for less emphasis
+$light-text: #525252;               // Light grey, used sparingly
 
-$light-link: #66ffff;              // Bright jade link
-$light-link-hover: #ffffff;        // Hover to white for clarity
+$light-link: #0d1d27;               // Strong blue link for visibility on white
+$light-link-hover: #163b52;         // Darker blue on hover
 
-$code: #002e2e;                    // Deep jade for code blocks
+$code: #242121;                     // Light grey for code blocks background
 
 /* Image Heights */
 
@@ -59,4 +59,5 @@ $parallax-height: 350px;
 $viewer-height: 100%;
 $max-width: 100%;
 
+@import "bootstrap";
 @import "facets";

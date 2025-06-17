@@ -19,13 +19,17 @@ function getThumbnail(item, url) {
 }
 
 function displayResult(item, fields, url) {
-  var pid   = item.pid;
-  var label = item.label || 'Untitled';
-  var link  = item.permalink;
-  var thumb = getThumbnail(item, url);
-  var meta = `<b>collection</b>: ${item.collection} |<b>artist</b>:  ${item.artist}`;
-  // note: href below not working on localhost
-  return `<div class="result"><a href="..${link}">${thumb}<p><span class="title">${item.label}</span><br><span class="meta">${meta}</span></p></a></div>`;
+  // Create the individual post URL from the title
+  var link = '/posts/' + (item.title || 'untitled').toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .replace(/-+/g, '-') // Replace multiple hyphens with single
+    .trim() + '/';
+
+  var title = item.title || 'Untitled';
+  var thumb = getThumbnail(item, url); // optional, remove if no thumbnails
+
+  return `<div class="result"><a href="${link}">${thumb}<p><span class="title">${title}</span></p></a></div>`;
 }
 
 function startSearchUI(fields, indexFile, url) {
@@ -40,18 +44,29 @@ function startSearchUI(fields, indexFile, url) {
 
     $('input#search').on('keyup', function() {
       var results_div = $('#results');
-      var query       = $(this).val();
-      var results     = index.search(query, { boolean: 'AND', expand: true });
+      var query       = $(this).val().trim();
+
+      // Clear results if search is empty
+      if (query === '') {
+        results_div.empty();
+        return;
+      }
+
+      var results = index.search(query, { boolean: 'AND', expand: true });
 
       results_div.empty();
-      results_div.append(`<p class="results-info">Displaying ${results.length} results</p>`);
 
-      for (var r in results) {
-        var ref    = results[r].ref;
-        var item   = store[ref];
-        var result = displayResult(item, fields, url);
+      // Only show results info if there are results to show
+      if (results.length > 0) {
+        results_div.append(`<p class="results-info show">Displaying ${results.length} results</p>`);
 
-        results_div.append(result);
+        for (var r in results) {
+          var ref    = results[r].ref;
+          var item   = store[ref];
+          var result = displayResult(item, fields, url);
+
+          results_div.append(result);
+        }
       }
     });
   });
